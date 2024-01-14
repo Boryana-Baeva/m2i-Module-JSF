@@ -3,37 +3,37 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-<h:head>
-    <title>To Do List</title>
-</h:head>
-<h:body>
-    <h:form>
-        <h:panelGrid columns="1">
-            <h:outputLabel for="task" value="Tâche:" />
-            <h:inputText id="task" value="#{formToDoListBean.task}"
-                         validatorMessage="Une tâche doit contenir entre 2 et 150 caractères"
-                         required="true" requiredMessage="Champ obligatoire">
-                <f:validateLength minimum="2" maximum="150"/>
-            </h:inputText>
-            <h:message for="task" />
-        </h:panelGrid>
+    <h:head>
+        <title>To Do List</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="1">
+                <h:outputLabel for="task" value="Tâche:" />
+                <h:inputText id="task" value="#{formToDoListBean.task}"
+                             validatorMessage="Une tâche doit contenir entre 2 et 150 caractères"
+                             required="true" requiredMessage="Champ obligatoire">
+                    <f:validateLength minimum="2" maximum="150"/>
+                </h:inputText>
+                <h:message for="task" />
+            </h:panelGrid>
 
-        <!-- toDoListBean.addTask(formToDoListBean.task) -->
-        <h:commandButton value="Ajouter" action="#{formToDoListBean.validateAndAddTask(formToDoListBean.task)}"/>
+            <!-- toDoListBean.addTask(formToDoListBean.task) -->
+            <h:commandButton value="Ajouter" action="#{formToDoListBean.validateAndAddTask(formToDoListBean.task)}"/>
 
-        <br/><br/>
-        <h:outputText value="To Do List : " />
+            <br/><br/>
+            <h:outputText value="To Do List : " />
 
-        <ul>
-            <ui:repeat value="#{toDoListBean.tasks}" var="task">
-                <li> #{task} </li>
-            </ui:repeat>
-        </ul>
+            <ul>
+                <ui:repeat value="#{toDoListBean.tasks}" var="task">
+                    <li> #{task} </li>
+                </ui:repeat>
+            </ul>
 
-        <br/>
-        <h:outputText value="Nombre tâches : #{toDoListBean.tasks.size()}" />
-        <br/>
+            <br/>
+            <h:outputText value="Nombre tâches : #{toDoListBean.tasks.size()}" />
+            <br/>
 
-            </h:form>
-        </h:body>
-    </html>
+        </h:form>
+    </h:body>
+</html>
