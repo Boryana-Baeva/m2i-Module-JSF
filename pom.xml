@@ -80,6 +80,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>jakarta10-JSF-starter</finalName>
+		<finalName>demoJSF</finalName>
 	</build>
 </project>
