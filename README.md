@@ -1,3 +1,4 @@
-# Jakarta EE 10 Starter + JSF 4 + CDI
+# Tasks
 
-## Deploy on Tomcat 10
+## TP Todolist (JSF):
+### Créer une todolist avec un bean qui va contenir la liste des taches et une Vue XHTML qui va proposer un formulaire pour ajouter une tache et affichera aussi la liste des taches du jour.
