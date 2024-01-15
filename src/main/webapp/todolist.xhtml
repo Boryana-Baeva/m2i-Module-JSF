@@ -19,7 +19,8 @@
             </h:panelGrid>
 
             <!-- toDoListBean.addTask(formToDoListBean.task) -->
-            <h:commandButton value="Ajouter" action="#{formToDoListBean.validateAndAddTask(formToDoListBean.task)}"/>
+            <h:commandButton value="Ajouter" action="#{formToDoListBean.formSubmit(formToDoListBean.task)}"/>
+        </h:form>
 
             <br/><br/>
             <h:outputText value="To Do List : " />
@@ -32,8 +33,6 @@
 
             <br/>
             <h:outputText value="Nombre tâches : #{toDoListBean.tasks.size()}" />
-            <br/>
 
-        </h:form>
     </h:body>
 </html>

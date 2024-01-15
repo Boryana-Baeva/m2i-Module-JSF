@@ -29,7 +29,7 @@ public class FormToDoListBean {
         isValid = valid;
     }
 
-    public void validateAndAddTask(String taskParam) {
+    public void formSubmit(String taskParam) {
         toDoListBean.addTask(taskParam);
         isValid = true;
         // Clear the field
