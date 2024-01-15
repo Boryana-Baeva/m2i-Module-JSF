@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:mycomp="http://java.sun.com/jsf/composite/components">
+<h:head>
+    <title>Home</title>
+</h:head>
+<h:body>
+    <mycomp:blogMenuComponent title="Home Page" />
+    <mycomp:blogMenuComponent formCreateLink="Create New" />
+
+    <h2>Blog Posts</h2>
+    <ul>
+        <ui:repeat value="#{blogPostListBean.blogPosts}" var="blogPost">
+            <li>
+                <h:link value="#{blogPost.title}" outcome="blogPostDetail.xhtml">
+                    <f:param name="title" value="#{blogPost.title}" />
+                    <f:param name="content" value="#{blogPost.content}"/>
+                    <f:param name="datePublished" value="#{blogPost.datePublished}" />
+                    <f:param name="author" value="#{blogPost.author}" />
+                </h:link>
+            </li>
+        </ui:repeat>
+    </ul>
+
+
+</h:body>
+</html>

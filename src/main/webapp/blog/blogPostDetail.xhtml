@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:mycomp="http://java.sun.com/jsf/composite/components">
+<h:head>
+    <title>Blog Post Detail</title>
+</h:head>
+<h:body>
+    <mycomp:blogMenuComponent title="Blog Post Details Page" />
+    <mycomp:blogMenuComponent homeLink="Home" />
+    <mycomp:blogMenuComponent formCreateLink="Create New" />
+
+    <f:metadata>
+        <f:viewParam name="title" value="#{title}" />
+        <f:viewParam name="content" value="#{content}" />
+        <f:viewParam name="datePublished" value="#{datePublished}" />
+        <f:viewParam name="author" value="#{author}" />
+    </f:metadata>
+
+
+    <h2>#{title}</h2>
+
+    <div>
+        <strong>Publié </strong>
+        <h:outputText value="#{datePublished}" >
+            <f:convertDateTime type="date" pattern="yyyy-MM-dd" />
+        </h:outputText>
+        <strong>par </strong>
+        <h:outputText value="#{author}" />
+    </div>
+    <br/>
+    <div>
+        <h:outputText value="#{content}" />
+    </div>
+</h:body>
+</html>

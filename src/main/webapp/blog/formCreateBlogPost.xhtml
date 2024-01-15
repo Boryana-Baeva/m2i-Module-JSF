@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:mycomp="http://java.sun.com/jsf/composite/components">
+<h:head>
+    <title>Create A New Blog Post</title>
+</h:head>
+<h:body>
+    <mycomp:blogMenuComponent title="Create New Blog Post" />
+    <mycomp:blogMenuComponent homeLink="Home" />
+
+    <h2>New Blog Post</h2>
+    <h:form>
+        <h:panelGrid columns="1">
+            <h:outputLabel for="title" value="Title:" />
+            <h:inputText id="title" value="#{formCreateBlogPostBean.title}"
+                         validatorMessage="doit être compris entre 2 et 50 caractères"
+                         required="true" requiredMessage="Champ obligatoire">
+                <f:validateLength minimum="2" maximum="50"/>
+            </h:inputText>
+            <h:message for="title" />
+
+            <h:outputLabel for="author" value="Author:" />
+            <h:inputText id="author" value="#{formCreateBlogPostBean.author}"
+                         validatorMessage="doit être compris entre 2 et 20 caractères">
+                <f:validateLength minimum="2" maximum="20"/>
+            </h:inputText>
+            <h:message for="author" />
+
+            <h:outputLabel for="content" value="Content:" />
+            <h:inputTextarea id="content" value="#{formCreateBlogPostBean.content}" rows="15" cols="70"/>
+
+            <h:commandButton value="Create" action="#{formCreateBlogPostBean.submit}"/>
+
+        </h:panelGrid>
+    </h:form>
+
+</h:body>
+</html>

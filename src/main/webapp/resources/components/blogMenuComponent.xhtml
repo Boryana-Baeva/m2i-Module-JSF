@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:cc="http://java.sun.com/jsf/composite">
+
+    <cc:interface>
+        <cc:attribute name="title" />
+        <cc:attribute name="homeLink" />
+        <cc:attribute name="formCreateLink" />
+    </cc:interface>
+
+    <cc:implementation>
+        <h:outputText value="#{cc.attrs.title}" styleClass="custom-header" />
+        <br/>
+        <h:link value="#{cc.attrs.homeLink}" outcome="home.xhtml" />
+        <h:link value="#{cc.attrs.formCreateLink}" outcome="formCreateBlogPost.xhtml" />
+    </cc:implementation>
+
+
+
+</html>
